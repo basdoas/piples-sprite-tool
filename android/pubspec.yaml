@@ -1,0 +1,42 @@
+name: piples_sprite_tool_mobile
+description: Piples Sprite Tool - Mobile version for Android
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Kamera erişimi
+  camera: ^0.10.5+5
+  
+  # Galeri erişimi
+  image_picker: ^1.0.7
+  
+  # İzinler
+  permission_handler: ^11.3.0
+  
+  # Görüntü işleme
+  image: ^4.1.3
+  bitmap: ^0.2.0
+  
+  # Dosya işlemleri
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  
+  # GIF oluşturma
+  archive: ^3.4.10
+  
+  # UI
+  cupertino_icons: ^1.0.6
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
