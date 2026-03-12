@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.piples_sprite_tool_mobile"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdk 36
     ndkVersion flutter.ndkVersion
 
     compileOptions {
