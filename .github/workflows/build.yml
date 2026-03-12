@@ -13,6 +13,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./android
     
     steps:
     - uses: actions/checkout@v4
@@ -30,26 +33,16 @@ jobs:
         channel: 'stable'
     
     - name: Check Flutter
-      run: flutter doctor
+      run: flutter doctor -v
     
     - name: Install dependencies
-      working-directory: ./android
       run: flutter pub get
     
-    - name: Clean build
-      working-directory: ./android
-      run: flutter clean
-      
     - name: Build APK
-      working-directory: ./android
       run: flutter build apk --release
-    
-    - name: List output
-      run: ls -la android/build/app/outputs/flutter-apk/
     
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: piples-sprite-tool-apk
         path: android/build/app/outputs/flutter-apk/app-release.apk
-        if-no-files-found: warn
