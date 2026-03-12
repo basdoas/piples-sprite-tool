@@ -13,9 +13,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./android
     
     steps:
     - uses: actions/checkout@v4
@@ -36,10 +33,14 @@ jobs:
       run: flutter doctor -v
     
     - name: Install dependencies
-      run: flutter pub get
+      run: |
+        cd android
+        flutter pub get
     
     - name: Build APK
-      run: flutter build apk --release
+      run: |
+        cd android
+        flutter build apk --release
     
     - name: Upload APK
       uses: actions/upload-artifact@v4
