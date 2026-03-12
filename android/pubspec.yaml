@@ -21,7 +21,6 @@ dependencies:
   
   # Görüntü işleme
   image: ^4.1.3
-  bitmap: ^0.2.0
   
   # Dosya işlemleri
   path_provider: ^2.1.2
