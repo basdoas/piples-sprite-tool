@@ -32,9 +32,11 @@ jobs:
     - name: Check Flutter
       run: flutter doctor -v
     
-    - name: Install dependencies
+    - name: Clean and install
       run: |
         cd android
+        flutter clean
+        rm -rf ~/.gradle/caches/
         flutter pub get
     
     - name: Build APK
